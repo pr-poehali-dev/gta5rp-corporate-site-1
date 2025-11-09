@@ -1,10 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState(() => {
+    const hash = window.location.hash.slice(1);
+    return hash || 'home';
+  });
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      if (hash) setActiveSection(hash);
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  const navigateTo = (section: string) => {
+    setActiveSection(section);
+    window.location.hash = section;
+  };
 
   const news = [
     {
@@ -80,13 +98,13 @@ const Index = () => {
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <Button 
-            onClick={() => setActiveSection('about')}
+            onClick={() => navigateTo('about')}
             className="bg-primary hover:bg-primary/90 text-black font-semibold px-8 py-6 text-lg"
           >
             О корпорации
           </Button>
           <Button 
-            onClick={() => setActiveSection('news')}
+            onClick={() => navigateTo('news')}
             variant="outline"
             className="border-white text-white hover:bg-white/10 font-semibold px-8 py-6 text-lg"
           >
@@ -268,14 +286,14 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <button 
-              onClick={() => setActiveSection('home')}
+              onClick={() => navigateTo('home')}
               className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors"
             >
               KINGSMAN
             </button>
             <div className="flex gap-6">
               <button
-                onClick={() => setActiveSection('about')}
+                onClick={() => navigateTo('about')}
                 className={`text-white hover:text-primary transition-colors font-medium ${
                   activeSection === 'about' ? 'text-primary' : ''
                 }`}
@@ -283,7 +301,7 @@ const Index = () => {
                 О корпорации
               </button>
               <button
-                onClick={() => setActiveSection('news')}
+                onClick={() => navigateTo('news')}
                 className={`text-white hover:text-primary transition-colors font-medium ${
                   activeSection === 'news' ? 'text-primary' : ''
                 }`}
@@ -291,7 +309,7 @@ const Index = () => {
                 Новости
               </button>
               <button
-                onClick={() => setActiveSection('management')}
+                onClick={() => navigateTo('management')}
                 className={`text-white hover:text-primary transition-colors font-medium ${
                   activeSection === 'management' ? 'text-primary' : ''
                 }`}
