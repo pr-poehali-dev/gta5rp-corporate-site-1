@@ -82,7 +82,6 @@ const Index = () => {
 
   const renderHome = () => (
     <div 
-      className="animate-in fade-in duration-500" 
       className="min-h-screen flex items-center justify-center relative"
       style={{
         backgroundImage: 'url(https://cdn.poehali.dev/projects/c5a85fde-68d0-4d72-85a8-97d406f1d992/files/8d54f332-e671-440b-8a83-6454ba14cb13.jpg)',
@@ -93,13 +92,13 @@ const Index = () => {
     >
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 text-center px-4">
-        <h1 className="text-7xl md:text-9xl font-bold mb-6 text-white tracking-tight">
+        <h1 className="text-7xl md:text-9xl font-bold mb-6 text-white tracking-tight animate-fade-in-down">
           KINGSMANS
         </h1>
-        <p className="text-xl md:text-2xl text-white/90 mb-8 font-light">
+        <p className="text-xl md:text-2xl text-white/90 mb-8 font-light animate-fade-in-up" style={{animationDelay: '0.2s', opacity: 0}}>
           Элитная корпорация Лос-Сантоса
         </p>
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up" style={{animationDelay: '0.4s', opacity: 0}}>
           <Button 
             onClick={() => navigateTo('about')}
             className="bg-primary hover:bg-primary/90 text-black font-semibold px-8 py-6 text-lg"
@@ -120,7 +119,6 @@ const Index = () => {
 
   const renderAbout = () => (
     <div 
-      className="animate-in fade-in slide-in-from-right-8 duration-500" 
       className="min-h-screen py-20 relative"
       style={{
         backgroundImage: 'url(https://cdn.poehali.dev/projects/c5a85fde-68d0-4d72-85a8-97d406f1d992/files/80a72385-5f8e-47a4-a507-2b3474812320.jpg)',
@@ -131,10 +129,10 @@ const Index = () => {
     >
       <div className="absolute inset-0 bg-black/70" />
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-5xl md:text-6xl font-bold text-white mb-12 text-center">
+        <h2 className="text-5xl md:text-6xl font-bold text-white mb-12 text-center animate-fade-in-down">
           О корпорации
         </h2>
-        <Card className="bg-black/60 border-primary/30 p-8 md:p-12 backdrop-blur-sm">
+        <Card className="bg-black/60 border-primary/30 p-8 md:p-12 backdrop-blur-sm animate-scale-in" style={{animationDelay: '0.2s', opacity: 0}}>
           <div className="space-y-6 text-white">
             <p className="text-xl leading-relaxed">
               <span className="text-primary font-bold text-2xl">Kingsmans</span> — элитная корпорация Лос-Сантоса, 
@@ -198,7 +196,6 @@ const Index = () => {
 
   const renderNews = () => (
     <div 
-      className="animate-in fade-in slide-in-from-left-8 duration-500" 
       className="min-h-screen py-20 relative"
       style={{
         backgroundImage: 'url(https://cdn.poehali.dev/projects/c5a85fde-68d0-4d72-85a8-97d406f1d992/files/6a65f4db-b5b8-4f05-90a4-375cab81ac5f.jpg)',
@@ -209,14 +206,15 @@ const Index = () => {
     >
       <div className="absolute inset-0 bg-black/70" />
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-5xl md:text-6xl font-bold text-white mb-12 text-center">
+        <h2 className="text-5xl md:text-6xl font-bold text-white mb-12 text-center animate-fade-in-down">
           Новости
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {news.map((item) => (
+          {news.map((item, index) => (
             <Card 
               key={item.id}
-              className="bg-black/60 border-primary/30 p-6 hover:bg-black/70 transition-all hover:scale-105 cursor-pointer backdrop-blur-sm"
+              className="bg-black/60 border-primary/30 p-6 hover:bg-black/70 transition-all hover:scale-105 cursor-pointer backdrop-blur-sm animate-fade-in-up"
+              style={{animationDelay: `${0.2 + index * 0.1}s`, opacity: 0}}
             >
               <div className="flex items-start gap-3 mb-4">
                 <Icon name="Newspaper" className="text-primary flex-shrink-0" size={24} />
@@ -235,12 +233,12 @@ const Index = () => {
 
   const renderManagement = () => (
     <div 
-      className="animate-in fade-in slide-in-from-bottom-8 duration-500" className="min-h-screen py-20 bg-gradient-to-b from-black via-secondary to-black">
+      className="min-h-screen py-20 bg-gradient-to-b from-black via-secondary to-black">
       <div className="container mx-auto px-4">
-        <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 text-center">
+        <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 text-center animate-fade-in-down">
           Руководство
         </h2>
-        <p className="text-center text-white/70 mb-12 text-lg">
+        <p className="text-center text-white/70 mb-12 text-lg animate-fade-in-up" style={{animationDelay: '0.2s', opacity: 0}}>
           Команда профессионалов мирового уровня
         </p>
         
@@ -248,7 +246,8 @@ const Index = () => {
           {management.slice(0, 2).map((person, index) => (
             <Card 
               key={index}
-              className="bg-gradient-to-br from-black/80 to-secondary border-primary/50 p-8 hover:border-primary transition-all"
+              className="bg-gradient-to-br from-black/80 to-secondary border-primary/50 p-8 hover:border-primary transition-all animate-fade-in-left"
+              style={{animationDelay: `${0.2 + index * 0.15}s`, opacity: 0}}
             >
               <div className="flex items-center gap-4 mb-4">
                 {person.avatar ? (
@@ -272,12 +271,13 @@ const Index = () => {
           ))}
         </div>
 
-        <h3 className="text-3xl font-bold text-white mb-8 text-center">Главы отделов</h3>
+        <h3 className="text-3xl font-bold text-white mb-8 text-center animate-fade-in-up" style={{animationDelay: '0.5s', opacity: 0}}>Главы отделов</h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {management.slice(2).map((person, index) => (
             <Card 
               key={index}
-              className="bg-black/60 border-primary/30 p-6 hover:bg-black/70 transition-all hover:scale-105 backdrop-blur-sm"
+              className="bg-black/60 border-primary/30 p-6 hover:bg-black/70 transition-all hover:scale-105 backdrop-blur-sm animate-scale-in"
+              style={{animationDelay: `${0.7 + index * 0.1}s`, opacity: 0}}
             >
               <div className="flex flex-col items-center text-center mb-4">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center mb-3">
