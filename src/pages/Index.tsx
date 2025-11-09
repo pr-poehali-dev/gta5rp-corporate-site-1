@@ -49,12 +49,14 @@ const Index = () => {
     {
       name: 'Alexei Morozov',
       position: 'Генеральный директор',
-      description: 'Основатель корпорации Kingsmans. Бизнеса, под руководством которого компания стала лидером среди других корпораций в Лос-Сантосе.'
+      description: 'Основатель корпорации Kingsmans. Бизнеса, под руководством которого компания стала лидером среди других корпораций в Лос-Сантосе.',
+      avatar: 'https://cdn.poehali.dev/files/cc80104a-c7f8-4c44-9570-60b84c46260b.png'
     },
     {
       name: 'Maksim Hartford',
       position: 'Исполнительный директор',
-      description: 'Заместитель основателя и глава отдела kingsman корпорации Kingsmans с помощью которого корпорация пришла к лидеру среди других корпораций. Отвечает за производство.'
+      description: 'Заместитель основателя и глава отдела kingsman корпорации Kingsmans с помощью которого корпорация пришла к лидеру среди других корпораций. Отвечает за производство.',
+      avatar: 'https://cdn.poehali.dev/files/417f8bdb-40ab-4eb5-bc13-aaf20f290179.png'
     },
     {
       name: 'Вакантно',
@@ -80,6 +82,7 @@ const Index = () => {
 
   const renderHome = () => (
     <div 
+      className="animate-in fade-in duration-500" 
       className="min-h-screen flex items-center justify-center relative"
       style={{
         backgroundImage: 'url(https://cdn.poehali.dev/projects/c5a85fde-68d0-4d72-85a8-97d406f1d992/files/8d54f332-e671-440b-8a83-6454ba14cb13.jpg)',
@@ -117,6 +120,7 @@ const Index = () => {
 
   const renderAbout = () => (
     <div 
+      className="animate-in fade-in slide-in-from-right-8 duration-500" 
       className="min-h-screen py-20 relative"
       style={{
         backgroundImage: 'url(https://cdn.poehali.dev/projects/c5a85fde-68d0-4d72-85a8-97d406f1d992/files/80a72385-5f8e-47a4-a507-2b3474812320.jpg)',
@@ -183,7 +187,7 @@ const Index = () => {
 
             <div className="mt-8 pt-8 border-t border-primary/30">
               <p className="text-lg text-white/90">
-                Мы принимаем к себе всех, обеспечивая индивидуальный всеми инструментами и помогаем разобраться что как работает. Наша репутация — это гарантия качества и надёжности.
+                Мы принимаем к себе всех, обеспечивая всеми инструментами и помогаем разобраться что как работает. Наша репутация — это гарантия качества и надёжности.
               </p>
             </div>
           </div>
@@ -194,6 +198,7 @@ const Index = () => {
 
   const renderNews = () => (
     <div 
+      className="animate-in fade-in slide-in-from-left-8 duration-500" 
       className="min-h-screen py-20 relative"
       style={{
         backgroundImage: 'url(https://cdn.poehali.dev/projects/c5a85fde-68d0-4d72-85a8-97d406f1d992/files/6a65f4db-b5b8-4f05-90a4-375cab81ac5f.jpg)',
@@ -229,7 +234,8 @@ const Index = () => {
   );
 
   const renderManagement = () => (
-    <div className="min-h-screen py-20 bg-gradient-to-b from-black via-secondary to-black">
+    <div 
+      className="animate-in fade-in slide-in-from-bottom-8 duration-500" className="min-h-screen py-20 bg-gradient-to-b from-black via-secondary to-black">
       <div className="container mx-auto px-4">
         <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 text-center">
           Руководство
@@ -245,9 +251,17 @@ const Index = () => {
               className="bg-gradient-to-br from-black/80 to-secondary border-primary/50 p-8 hover:border-primary transition-all"
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center">
-                  <Icon name="Crown" className="text-black" size={32} />
-                </div>
+                {person.avatar ? (
+                  <img 
+                    src={person.avatar} 
+                    alt={person.name}
+                    className="w-20 h-20 rounded-full object-cover border-2 border-primary/50"
+                  />
+                ) : (
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center">
+                    <Icon name="Crown" className="text-black" size={32} />
+                  </div>
+                )}
                 <div>
                   <h3 className="text-2xl font-bold text-white">{person.name}</h3>
                   <p className="text-primary font-semibold">{person.position}</p>
