@@ -9,52 +9,52 @@ const Index = () => {
   const news = [
     {
       id: 1,
-      title: 'Открытие нового офиса в Vinewood',
-      date: '15 Октября 2024',
-      preview: 'Kingsman Corporation расширяет своё присутствие в элитном районе Лос-Сантоса'
+      title: 'Был приобретён новый дом в корпорацию на Vinewood',
+      date: '1 Января 2026',
+      preview: 'Kingsmans создаёт всё больше комфортные условия.'
     },
     {
       id: 2,
-      title: 'Годовой отчёт за 2024',
-      date: '1 Октября 2024',
-      preview: 'Рекордные показатели прибыли и расширение портфеля услуг'
+      title: 'Был приобретены 2 новых завода в район La Mesa и Foothills Chiliad',
+      date: '30 Октября 2025',
+      preview: 'Kingsmans расширяет своё производство'
     },
     {
       id: 3,
-      title: 'Новая линейка премиум услуг',
-      date: '20 Сентября 2024',
-      preview: 'Представляем эксклюзивные решения для VIP-клиентов'
+      title: 'Будут проводится конкурсы среди работников Kingsmans',
+      date: '1 Января 2026',
+      preview: 'Kingsmans проводит конкурсы до 1 марта 2026 в честь открытия'
     }
   ];
 
   const management = [
     {
-      name: 'Maksim Hartford',
-      position: 'Генеральный директор',
-      description: 'Основатель и CEO корпорации Kingsman. Визионер бизнеса, под руководством которого компания стала лидером рынка элитных услуг в Лос-Сантосе.'
-    },
-    {
       name: 'Alexei Morozov',
-      position: 'Исполнительный директор',
-      description: 'Со-основатель и COO корпорации Kingsman. Отвечает за операционное управление и стратегическое развитие компании.'
+      position: 'Генеральный директор',
+      description: 'Основатель корпорации Kingsmans. Бизнеса, под руководством которого компания стала лидером среди других корпораций в Лос-Сантосе.'
     },
     {
-      name: 'Victoria Chen',
+      name: 'Maksim Hartford',
+      position: 'Исполнительный директор',
+      description: 'Заместитель основателя и глава отдела kingsman корпорации Kingsmans с помощью которого корпорация пришла к лидеру среди других корпораций. Отвечает за производство.'
+    },
+    {
+      name: 'Вакантно',
       position: 'Глава финансового отдела',
       description: 'CFO с 15-летним опытом в финансовом секторе. Управляет всеми финансовыми операциями корпорации.'
     },
     {
-      name: 'Marcus Williams',
+      name: 'Вакантно',
       position: 'Глава отдела безопасности',
       description: 'Бывший агент спецслужб. Обеспечивает безопасность клиентов и конфиденциальность операций.'
     },
     {
-      name: 'Elena Rodriguez',
+      name: 'Вакантно',
       position: 'Глава отдела VIP-клиентов',
       description: 'Специалист по работе с премиум-сегментом. Персональный подход к каждому клиенту.'
     },
     {
-      name: 'James Anderson',
+      name: 'Вакантно',
       position: 'Глава юридического отдела',
       description: 'Ведущий корпоративный юрист с безупречной репутацией в сфере бизнес-права.'
     }
@@ -73,7 +73,7 @@ const Index = () => {
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 text-center px-4">
         <h1 className="text-7xl md:text-9xl font-bold mb-6 text-white tracking-tight">
-          KINGSMAN
+          KINGSMANS
         </h1>
         <p className="text-xl md:text-2xl text-white/90 mb-8 font-light">
           Элитная корпорация Лос-Сантоса
@@ -115,8 +115,8 @@ const Index = () => {
         <Card className="bg-black/60 border-primary/30 p-8 md:p-12 backdrop-blur-sm">
           <div className="space-y-6 text-white">
             <p className="text-xl leading-relaxed">
-              <span className="text-primary font-bold text-2xl">Kingsman Corporation</span> — ведущая элитная корпорация Лос-Сантоса, 
-              специализирующаяся на предоставлении премиум-услуг высшего класса.
+              <span className="text-primary font-bold text-2xl">Kingsmans</span> — элитная корпорация Лос-Сантоса, 
+              специализирующаяся на производстве, покупки и продаже.
             </p>
             
             <h3 className="text-3xl font-bold text-primary mt-8 mb-4">Наша деятельность:</h3>
@@ -126,7 +126,7 @@ const Index = () => {
                 <Icon name="Building2" className="text-primary flex-shrink-0" size={24} />
                 <div>
                   <h4 className="font-bold text-lg mb-2">Элитная недвижимость</h4>
-                  <p className="text-white/80">Эксклюзивные объекты в самых престижных районах города</p>
+                  <p className="text-white/80">Наш штаб находится в элитном районе города Лос-Сантоса</p>
                 </div>
               </div>
               
@@ -135,14 +135,6 @@ const Index = () => {
                 <div>
                   <h4 className="font-bold text-lg mb-2">Бизнес-консалтинг</h4>
                   <p className="text-white/80">Стратегическое развитие и управление компаниями</p>
-                </div>
-              </div>
-              
-              <div className="flex gap-4">
-                <Icon name="Shield" className="text-primary flex-shrink-0" size={24} />
-                <div>
-                  <h4 className="font-bold text-lg mb-2">VIP-безопасность</h4>
-                  <p className="text-white/80">Комплексная защита клиентов и конфиденциальность</p>
                 </div>
               </div>
               
@@ -158,7 +150,7 @@ const Index = () => {
                 <Icon name="Car" className="text-primary flex-shrink-0" size={24} />
                 <div>
                   <h4 className="font-bold text-lg mb-2">Премиум-транспорт</h4>
-                  <p className="text-white/80">Эксклюзивные автомобили и личные водители</p>
+                  <p className="text-white/80">Эксклюзивные автомобили</p>
                 </div>
               </div>
               
@@ -173,8 +165,7 @@ const Index = () => {
 
             <div className="mt-8 pt-8 border-t border-primary/30">
               <p className="text-lg text-white/90">
-                Мы работаем только с избранными клиентами, обеспечивая индивидуальный подход 
-                и абсолютную конфиденциальность. Наша репутация — это гарантия качества и надёжности.
+                Мы принимаем к себе всех, обеспечивая индивидуальный всеми инструментами и помогаем разобраться что как работает. Наша репутация — это гарантия качества и надёжности.
               </p>
             </div>
           </div>
