@@ -302,9 +302,7 @@ const Index = () => {
             <button 
               onClick={() => navigateTo('home')}
               className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors"
-            >
-              KINGSMAN
-            </button>
+            >KINGSMANS</button>
             <div className="flex gap-6">
               <button
                 onClick={() => navigateTo('about')}
