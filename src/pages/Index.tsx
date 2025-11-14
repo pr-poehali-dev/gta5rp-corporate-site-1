@@ -92,9 +92,7 @@ const Index = () => {
     >
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 text-center px-4">
-        <h1 className="text-7xl md:text-9xl font-bold mb-6 text-white tracking-tight animate-fade-in-down">
-          KINGSMANS
-        </h1>
+        <h1 className="text-7xl md:text-9xl font-bold mb-6 text-white tracking-tight animate-fade-in-down">KINGSMANS</h1>
         <p className="text-xl md:text-2xl text-white/90 mb-8 font-light animate-fade-in-up" style={{animationDelay: '0.2s', opacity: 0}}>
           Элитная корпорация Лос-Сантоса
         </p>
